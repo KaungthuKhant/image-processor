@@ -56,7 +56,6 @@ Image loadImage(FILE *imgFile)
 	
 }
 
-
 // this function will make an array with numRows and numCols
 Pixel** make2DArray(int numRows, int numCols)
 {
@@ -115,8 +114,6 @@ void grayImg(Image img)
 			}
 	}
 }
-
-
 
 // this funciton will flip the image vertically if boolean value passed is true
 // else, flip horizontally
