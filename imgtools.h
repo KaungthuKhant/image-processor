@@ -15,9 +15,9 @@ struct Image{
 };
 
 
-Image loadImage(FILE *imageFile);
+Image loadImg(FILE *imageFile);
 Pixel** make2DArray(int numRows, int numCols);
-void saveImage(Image img, FILE *imgFile);
-void toGrayscale(Image img);
-void flipImage(Image img, bool flipVertically);
+void saveImg(Image img, FILE *imgFile);
+void grayImg(Image img);
+void flipImg(Image img, bool flipVertically);
 

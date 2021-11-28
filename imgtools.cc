@@ -15,7 +15,7 @@ Created by: Kaung Thu Khant
 
 // Loads a “P3” PPM formatted image from a previously opened text file. 
 // The image will be returned as Image 
-Image loadImage(FILE *imgFile)
+Image loadImg(FILE *imgFile)
 {
 	Image img;
 	Pixel pxl;
@@ -147,5 +147,21 @@ void flipImg(Image img, bool flipVertically)
 				img.pixels[i][index] = temp;
 			}
 		}
+	}
+}
+
+void ratate(Image img, book left)
+{
+	int width = img.width;
+	int height = img.height;
+	int index;
+
+	if(left == true)
+	{
+		Image newImg = img;
+	}
+	else
+	{
+
 	}
 }
