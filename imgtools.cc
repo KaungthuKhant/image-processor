@@ -172,3 +172,7 @@ void ratate(Image img, bool left)
 
 	}
 }
+
+
+
+
