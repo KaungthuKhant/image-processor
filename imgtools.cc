@@ -18,9 +18,7 @@ Created by: Kaung Thu Khant
 Image loadImg(FILE *imgFile)
 {
 	Image img;
-	Pixel pxl;
 	int maxRGB;
-	char temp[20];
 	
 	// scan inportant informations
 	fscanf(imgFile, "%d", &img.width);
@@ -95,7 +93,6 @@ void saveImg(Image img, FILE *imgFile)
 // turn the image that is passed into a gray scale
 void grayImg(Image img)
 {
-	Pixel pxl;
 	int gray;
 	for (int i = 0; i < img.height; i++)
 	{
@@ -106,7 +103,7 @@ void grayImg(Image img)
 				int blue = img.pixels[i][j].blue;
 				
 				// calculate the gray scale using the rgb values
-				gray = round(0.299*red + 0.587 * blue + 0.114 * blue);
+				gray = round(0.299*red + 0.587 * green + 0.114 * blue);
 				
 				img.pixels[i][j].red = gray;
 				img.pixels[i][j].green = gray;
@@ -150,15 +147,25 @@ void flipImg(Image img, bool flipVertically)
 	}
 }
 
-void ratate(Image img, book left)
+void ratate(Image img, bool left)
 {
 	int width = img.width;
 	int height = img.height;
-	int index;
+	//int index;
 
 	if(left == true)
 	{
-		Image newImg = img;
+		Image newImg;
+		newImg.pixels = img.pixels;
+		for (int i = 0; i < height; i++)
+		{
+			for(int j = 0; j < width; j++)
+			{
+				printf("testing %d", img.pixels[i][j].red);
+				printf("testing %d", img.pixels[i][j].green);
+				printf("testing %d", img.pixels[i][j].blue);
+			}
+		}
 	}
 	else
 	{
